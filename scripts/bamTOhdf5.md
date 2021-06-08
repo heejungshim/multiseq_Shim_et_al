@@ -34,6 +34,7 @@ samtools index AT2-N706N503.qfiltered10.bam
 
 * In ~/genome/python/script/db, convert the filtered bam files into hdf5 and save them at @ATAC_hdf5
 
+```{}
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N702N501.qfiltered10.fwd @ATAC_hdf5/N702N501.qfiltered10.rev @process_bams/AT2-N702N501.qfiltered10.bam
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N702N502.qfiltered10.fwd @ATAC_hdf5/N702N502.qfiltered10.rev @process_bams/AT2-N702N502.qfiltered10.bam
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N702N503.qfiltered10.fwd @ATAC_hdf5/N702N503.qfiltered10.rev @process_bams/AT2-N702N503.qfiltered10.bam
@@ -45,3 +46,4 @@ python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N705N503.qfiltered10.f
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N706N501.qfiltered10.fwd @ATAC_hdf5/N706N501.qfiltered10.rev @process_bams/AT2-N706N501.qfiltered10.bam
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N706N502.qfiltered10.fwd @ATAC_hdf5/N706N502.qfiltered10.rev @process_bams/AT2-N706N502.qfiltered10.bam
 python load_bam_5prime_ends.py --assembly hg19 @ATAC_hdf5/N706N503.qfiltered10.fwd @ATAC_hdf5/N706N503.qfiltered10.rev @process_bams/AT2-N706N503.qfiltered10.bam
+```
