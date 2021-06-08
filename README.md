@@ -9,7 +9,7 @@ This repository contains the information and scripts for analysis in [Shim et al
       1. Information on the 242,714 regions included in the analysis (the top 5% of regions with the highest chromatin accessibility) and results from the analysis are in [multiseq_Shim_et_al/ATACseq/information_results](https://github.com/heejungshim/multiseq_Shim_et_al/tree/main/ATACseq/information_results).
       2. A script to for each region 1) extract ATAC-seq count data at the region on 6 samples (6 by 1024) from the hdf5 files and 2) do data-preprocessing as described in Shim et al (2021) is in [multiseq_Shim_et_al/scripts/ATAC-seq.Rmd](https://github.com/heejungshim/multiseq_Shim_et_al/tree/main/scripts/ATAC-seq.Rmd).
       3. Once we have the count data after the data-preprocessing, we can follow [the vignette of the multiseq R package][multiseq-web] to 1) run multiseq, and 2) plot estimated effect sizes as shown in Shim et al (2021).
-  * Simulation procedure described in Shim et al (2021) has been implemented in the function `sample.from.Binomial.with.Overdispersion` of [the multiseq R package][multiseq-package]]. See [the vignette of the multiseq R package][multiseq-web] to see how to use this function. 
+  * Simulation procedure described in Shim et al (2021) has been implemented in the function `sample.from.Binomial.with.Overdispersion` of [the multiseq R package][multiseq-package]. See [the vignette of the multiseq R package][multiseq-web] to see how to use this function. 
 
 
 ## License

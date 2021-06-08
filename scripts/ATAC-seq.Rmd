@@ -1,30 +1,30 @@
 ---
-title: "ATAC-seq data on chr1:568739-569762"
+title: "ATAC-seq data"
 author: Heejung Shim
 output: html_document
 ---
 
-Here, we will show how to obtain ATAC-seq data on chr1:568739-569762 for three copper treated samples and three media control samples and do data-preprocessing.
+Here, we will show how to obtain ATAC-seq data on chr1:568739-569762 for three copper treated samples and three media control samples and do data-preprocessing as described Shim et al 2021. 
 
 First download hdf5 files for all samples from XXX and save them in the following directory:
 ```{}
-cd multiseq_Shim_et_al/data/ATACseq/
+cd multiseq_Shim_et_al/ATACseq/information_results/
 ```
 
 ```{r}
 ## path to `multiseq_Shim_et_al' repository on your computer
-path.multiseq_Shim_et_al ="/Users/hjshim/Documents/Work/github/multiseq_Shim_et_al/"
+path.multiseq_Shim_et_al ="xxx"
 
 ## set work directory 
 setwd(path.multiseq_Shim_et_al)
 
 ## Path to directory which contain ATAC-seq data as hdf5 format, 
-hdf5.data.path = paste0(path.multiseq_Shim_et_al, "data/ATACseq/")
+hdf5.data.path = paste0(path.multiseq_Shim_et_al, "ATACseq/information_results/")
 
 ## load the R scripts to read data from hdf5 files and handle pcr artifacts 
 source("scripts/utils.R")
 
-## name for each condition: N702 for copper treatment, N706 for media control, and N705 for ethanol control
+## name for each condition: N702 for copper treatment, N706 for control 1 (media control), and N705 for control 2 (ethanol control)
 name.control = "N706"
 name.treatment = "N702"
 
@@ -44,7 +44,7 @@ numSam = length(sample.names)
 numBPs = en.posi - st.posi + 1
 ```
 
-We will read data and do data preprocessing (removing reads that are potentially artifacts due to PCR amplication).
+We will read data and do data-preprocessing (removing reads that are potentially artifacts due to PCR amplication).
 ```{r}
 ## save the ATAC-seq data
 ATAC.dat = matrix(data=0, nr = numSam, nc = numBPs)
@@ -89,9 +89,9 @@ if(!is.null(pcr.removed.rev$posi.with.pcr.artifacts)){
 We will match the sequencing depth by subsampling reads. This step is only required when we build the empirical distribution of the likelihood ratio test statistic by using an extra data set that is expected to have no difference in phenotype among samples (e.g., our ATAC-seq analysis in the main text).
 ```{r}
 ## Read sampling probabilities
-sampling.prob = scan(paste0(hdf5.data.path, "Copper.alt.prob"))
+sampling.prob = scan(paste0(hdf5.data.path, "Copper.prob"))
 
-## sample LRD and data
+## sample data - feel free to change seed number
 set.seed(789)
 phenoD = matrix(data=0, nr = numSam, nc = numBPs)
 
@@ -99,4 +99,4 @@ for(i in 1:numSam){
   phenoD[i,] = rbinom(numBPs, ATAC.dat[i,], sampling.prob[i])
 }
 ```
-`phenoD' contains 6 by 1024 read counts for 6 samples (3 copper treated vs 3 media control) on chr1:568739-569762.
+`phenoD` contains 6 by 1024 read counts for 6 samples (3 copper treated vs 3 media control) on chr1:568739-569762.
