@@ -6,7 +6,7 @@ output: html_document
 
 Here, we will show how to obtain ATAC-seq data on chr1:568739-569762 for three copper treated samples and three media control samples and do data-preprocessing as described Shim et al 2021. 
 
-First download hdf5 files for all samples from XXX and save them in the following directory:
+First download hdf5 files for all samples from [this link](https://melbourne.figshare.com/articles/dataset/ATAC-seq_data_from_Shim_et_al_2021/14748480) and save them in the following directory:
 ```{}
 cd multiseq_Shim_et_al/ATACseq/information_results/
 ```

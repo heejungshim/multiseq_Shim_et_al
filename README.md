@@ -29,5 +29,5 @@ for the full text of the license.
 [fsf]: https://www.fsf.org
 [multiseq-web]: https://heejungshim.github.io/multiseq
 [multiseq-package]: https://github.com/heejungshim/multiseq 
-[ATAC-seq-hdf5]: XXX
+[ATAC-seq-hdf5]: https://melbourne.figshare.com/articles/dataset/ATAC-seq_data_from_Shim_et_al_2021/14748480
 
