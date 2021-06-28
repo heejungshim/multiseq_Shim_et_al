@@ -24,7 +24,7 @@ can redistribute it and/or modify it under the terms of the
 for the full text of the license.
 
 
-[multiseq-arxiv]: XXX
+[multiseq-arxiv]: https://arxiv.org/abs/2106.13634
 [gpl]: http://www.gnu.org/licenses/gpl.html
 [fsf]: https://www.fsf.org
 [multiseq-web]: https://heejungshim.github.io/multiseq
