@@ -2,7 +2,7 @@
 
 This repository contains the information and scripts for analysis in [Shim et al. (2021)][multiseq-arxiv] and their results.  
 
-  * [The main manuscript and supplementary material][multiseq-arxiv]
+  * [The main manuscript and supplementary material](https://github.com/heejungshim/multiseq_Shim_et_al/tree/main/manuscript)
   * [the multiseq R package][multiseq-package] and [its vignette][multiseq-web].
   * ATAC-seq data (hdf5 format) for nine samples can be downloaded from [this link][ATAC-seq-hdf5]. These files have been converted from bam files using a script in [multiseq_Shim_et_al/scripts/bamTOhdf5.md](https://github.com/heejungshim/multiseq_Shim_et_al/tree/main/scripts/bamTOhdf5.md).
   * ATAC-seq analysis 
